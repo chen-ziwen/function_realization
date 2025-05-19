@@ -20,7 +20,7 @@ const getResoure = (ctx) => {
             if (err) {
                 reject(err);
             } else {
-                resolve(data.toString());
+                resolve(data);
             }
         })
     })
