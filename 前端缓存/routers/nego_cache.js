@@ -4,6 +4,7 @@ import Router from "koa-router";
 
 /*
 协商缓存：
+
 1. 第一次请求资源，服务器返回资源和缓存标识
 2. 客户端保存资源和缓存标识
 3. 下一次请求资源，客户端将缓存标识发送到服务器
@@ -36,7 +37,7 @@ router.get("/nego", async (ctx) => {
     // mtime	Modify Time	修改时间	
     // 最后一次修改文件（内容）或者目录（内容）的时间
 
-    //把具体的日期转换为（根据 GMT）字符串
+    // 把具体的日期转换为（根据 GMT）字符串
     if (ifModifiedSince == resource.mtime.toGMTString()) {
         ctx.status = 304;
     }
