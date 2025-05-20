@@ -44,7 +44,9 @@ class EmmiterEvent {
             this.eventsSwitch[name] = false;
         }
 
+        // 如果该名称事件添加过 后续不再添加
         if (!this.eventsSwitch[name]) return;
+
         // 如果事件已经触发过了 就不再执行
         this.events[name].push((...args) => {
             if (this.eventsSwitch[name]) {
