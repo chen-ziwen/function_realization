@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>实现拖拉拽功能</title>
+</head>
+
+<body>
+    <div id="container" style="
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100px;
+    height: 100px;
+    background-color: blue;">
+    </div>
+</body>
+
+<script type="text/javascript">
+    const box = document.getElementById("container");
+
+    let moving = false;
+    let rect = { x: 0, y: 0 };
+
+    document.addEventListener("mousedown", (e) => {
+        if (moving && e.target.id !== 'container') return;
+        const { left, top } = box.style;
+        const { clientX, clientY } = e;
+        moving = true;
+        rect.x = clientX - Number(left.substr(0, left.indexOf('px')));
+        rect.y = clientY - Number(top.substr(0, top.indexOf('px')));
+    });
+
+    document.addEventListener('mousemove', (e) => {
+        if (!moving) return;
+        box.style.left = (e.clientX - rect.x) + "px";
+        box.style.top = (e.clientY - rect.y) + "px";
+    });
+
+    document.addEventListener("mouseup", (e) => {
+        if (!moving) return;
+        moving = false;
+    })
+</script>
+
+</html>
