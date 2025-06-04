@@ -1,6 +1,7 @@
 function setPathValue(obj, paths, value) {
     if (!Array.isArray(paths)) paths = [paths];
     let resObj = obj;
+
     paths.forEach((key, index) => {
         if (index === paths.length - 1) {
             resObj[key] = value;
@@ -8,6 +9,7 @@ function setPathValue(obj, paths, value) {
         }
         resObj = resObj[key];
     });
+
     return resObj;
 }
 
