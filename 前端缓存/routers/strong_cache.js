@@ -54,7 +54,7 @@ router.get("/strong", async (ctx) => {
         // 设置强缓存，过期时间为10秒
         // 强缓存的特点是，在缓存期间，无论客户端是否重新请求，都会使用缓存中的数据，不会向服务器发送请求。
         'Cache-Control': 'max-age=10',
-        'Content-Type': 'text/plain; charset=utf-8; charset=utf-8'
+        'Content-Type': 'text/plain; charset=utf-8;'
     });
 
     ctx.body = await getResoure(ctx);
