@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>webWorker</title>
+</head>
+
+<body>
+
+</body>
+
+<script type="text/javascript">
+    const worker = new Worker('./worker.js'); // 新建一个Worker对象
+
+    // 当 worker 线程发送消息时，会触发 onmessage 事件
+    // 当线程执行完，会返回一个结果
+    worker.onmessage = function (res) {
+        console.log('Message received from worker:', res.data);
+    };
+
+    setTimeout(() => {
+        worker.postMessage({});
+    }, 1000);
+</script>
+
+<style>
+
+</style>
+
+</html>
