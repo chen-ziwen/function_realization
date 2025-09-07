@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- tabindex 让元素可聚焦 -->
+        <div class="emoji" tabindex="0">🐶</div>
+        <div class="emoji" tabindex="0">🐱</div>
+        <div class="emoji" tabindex="0">🐢</div>
+    </div>
+</body>
+
+<style>
+    .emoji {
+        font-size: 8em;
+        /* filter 配合过渡或动画可以实现很酷的效果 */
+        filter: grayscale(100%);
+        transition: filter 450ms ease;
+    }
+
+    /* is 可以匹配多个选择器 */
+    .emoji:is(:hover, :focus) {
+        filter: grayscale(0%) drop-shadow(0 8px 8px rgba(0, 0, 0, 0.5));
+    }
+
+    .wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    body {
+        display: grid;
+        place-items: center;
+    }
+</style>
+
+</html>

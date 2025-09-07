@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex 响应式案例</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="test">1555555555555221111111111111111111111111111115555555555555555555</div>
+        <div class="test">2</div>
+        <div class="test">3</div>
+        <div class="test">4</div>
+        <div class="test">5</div>
+    </div>
+</body>
+
+<style>
+    .container {
+        height: 1000px;
+        display: flex;
+        align-content: flex-start;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .container .test {
+        height: 100px;
+        background-color: red;
+        flex: 1 0 300px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+</style>
+
+</html>

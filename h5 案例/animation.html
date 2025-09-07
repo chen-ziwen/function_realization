@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container animation" style="--duration: 2s; --rotate: 360deg;">
+        666
+    </div>
+</body>
+
+<style>
+    .container {
+        width: 200px;
+        height: 200px;
+        background-color: lightblue;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    /* .container:hover {
+        animation: example var(--duration) forwards ease-in-out;
+    } */
+
+    .animation {
+        animation: example var(--duration) forwards ease-in-out;
+        /* 关键帧动画的时间函数 可带 steps */
+        animation-timing-function: steps(10, end);
+        /* 动画执行次数， 可以无限执行 */
+        animation-iteration-count: infinite;
+        animation-delay: 3s;
+    }
+
+    @keyframes example {
+        from {
+            background-color: lightblue;
+            /* transform: scale(1); */
+        }
+
+        50% {
+            transform: scale(1.5) rotateY(var(--rotate));
+        }
+
+        to {
+            background-color: lightgreen;
+        }
+    }
+</style>
+
+</html>
